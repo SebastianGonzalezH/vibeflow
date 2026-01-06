@@ -1,24 +1,24 @@
 import type { Metadata } from "next";
-import { Outfit, DM_Sans } from "next/font/google";
+import { Crimson_Pro, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
+const crimsonPro = Crimson_Pro({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-crimson",
   display: "swap",
   weight: ["400", "500", "600", "700"],
 });
 
-const dmSans = DM_Sans({
+const sourceSans = Source_Sans_3({
   subsets: ["latin"],
-  variable: "--font-dm-sans",
+  variable: "--font-source",
   display: "swap",
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "vibeflow",
-  description: "Project management for vibe coders",
+  title: "MindCare Pro - Clinical Practice Management",
+  description: "Professional mental health practice management for psychologists and therapists",
 };
 
 export default function RootLayout({
@@ -27,10 +27,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${outfit.variable} ${dmSans.variable} antialiased`}>
-        <div className="ambient-bg" aria-hidden="true" />
-        <div className="noise-overlay" aria-hidden="true" />
+    <html lang="en">
+      <body className={`${crimsonPro.variable} ${sourceSans.variable} antialiased`}>
+        <div className="organic-bg" aria-hidden="true" />
+        <div className="paper-texture" aria-hidden="true" />
         {children}
       </body>
     </html>
